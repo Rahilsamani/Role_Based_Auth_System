@@ -1,7 +1,8 @@
 import Footer from "../components/common/Footer";
 import Button from "../components/common/Button";
 import { useSelector } from "react-redux";
-import HeroImage from "../assets/Images/Home.png";
+import HeroImage from "../assets/Home.png";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const featuresDetails = [
@@ -56,8 +57,14 @@ const Home = () => {
               safeguard your digital assets.
             </p>
             {token ? (
-              <div className="mt-5 mb-5">
-                <Button text={"Let's Get Started"} link={"/dashboard/track"} />
+              <div className="mt-5 mb-5 text-white">
+                <Link to="/dashboard/track">
+                  <div
+                    className={`text-[13px] sm:text-[16px] rounded-md font-bold hover:scale-110 transition-all duration-200 bg-blue text-white w-44 h-10 flex justify-center items-center will-change-contents`}
+                  >
+                    Let's Get Started
+                  </div>
+                </Link>
               </div>
             ) : (
               <div className="flex gap-5 mt-5">
