@@ -4,12 +4,12 @@
 
 ### User
 
-- email: nuhulyxuq@mailinator.com
+- email: buny@mailinator.com
 - password: Pa$$w0rd!
 
 ### Moderator
 
-- email: judefaqo@mailinator.com
+- email: heze@mailinator.com
 - password: Pa$$w0rd!
 
 ### Admin
