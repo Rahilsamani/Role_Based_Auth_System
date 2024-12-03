@@ -3,7 +3,7 @@ import axios from "axios";
 export const fetchUsers = async (token) => {
   try {
     const response = await axios.get(
-      "http://localhost:4000/api/v1/user/allUsers",
+      "https://rbac-auth-backend.onrender.com/api/v1/user/allUsers",
       {
         headers: { Authorization: `Bearer ${token}` },
       }
@@ -18,7 +18,7 @@ export const fetchUsers = async (token) => {
 export const banUser = async (userId, token) => {
   try {
     await axios.post(
-      `http://localhost:4000/api/v1/user/ban/${userId}`,
+      `https://rbac-auth-backend.onrender.com/api/v1/user/ban/${userId}`,
       {},
       {
         headers: { Authorization: `Bearer ${token}` },
@@ -32,7 +32,7 @@ export const banUser = async (userId, token) => {
 export const changeUserRole = async (userId, newRole, token, user) => {
   try {
     await axios.post(
-      `http://localhost:4000/api/v1/user/changeRole/${userId}`,
+      `https://rbac-auth-backend.onrender.com/api/v1/user/changeRole/${userId}`,
       { role: newRole, user },
       {
         headers: { Authorization: `Bearer ${token}` },

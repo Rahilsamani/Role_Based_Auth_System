@@ -47,11 +47,15 @@ const Signup = () => {
     formData.append("image", data.image);
 
     try {
-      await axios.post("http://localhost:4000/api/v1/auth/signup", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      await axios.post(
+        "https://rbac-auth-backend.onrender.com/api/v1/auth/signup",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
       toast.dismiss(toastId);
       toast.success("Successfully Registered");
       navigate("/login");

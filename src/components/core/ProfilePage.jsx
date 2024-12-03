@@ -22,7 +22,7 @@ const ProfilePage = () => {
     const fetchUserDetails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/api/v1/user/userDetails/${userId}`,
+          `https://rbac-auth-backend.onrender.com/api/v1/user/userDetails/${userId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
