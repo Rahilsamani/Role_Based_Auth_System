@@ -11,6 +11,7 @@ import Login from "./pages/Login";
 import OpenRoute from "./components/core/OpenRoute";
 import PrivateRoute from "./components/core/PrivateRoute";
 import Contact from "./pages/Contact";
+import ProfilePage from "./components/core/ProfilePage";
 
 function App() {
   return (
@@ -45,7 +46,7 @@ function App() {
           }
         >
           <Route path="dashboard/track" element={<Track />} />
-          <Route path="dashboard/members" element={<UnderDevelopment />} />
+          <Route path="dashboard/profile" element={<ProfilePage />} />
           <Route path="dashboard/progress" element={<UnderDevelopment />} />
           <Route path="dashboard/payroll" element={<UnderDevelopment />} />
         </Route>

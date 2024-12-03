@@ -51,13 +51,16 @@ exports.isUser = async (req, res, next) => {
   }
 };
 
-//isModerator
-exports.isModerator = async (req, res, next) => {
+//isModeratorOrAdmin
+exports.isModeratorOrAdmin = async (req, res, next) => {
   try {
-    if (req.user.accountType !== "Moderator") {
+    if (
+      req.user.accountType !== "Moderator" ||
+      req.user.accountType !== "Admin"
+    ) {
       return res.status(401).json({
         success: false,
-        message: "This is a protected route for Moderator only",
+        message: "This is a protected route for Moderator and Admin only",
       });
     }
     next();

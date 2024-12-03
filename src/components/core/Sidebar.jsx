@@ -5,7 +5,7 @@ import { NavLink, matchPath, useLocation } from "react-router-dom";
 const Sidebar = () => {
   const sideLinks = [
     { icon: "VscGraphLine", name: "Track", link: "/dashboard/track" },
-    { icon: "VscOrganization", name: "Members", link: "/dashboard/members" },
+    { icon: "VscAccount", name: "Profile", link: "/dashboard/profile" },
     {
       icon: "GiProgression",
       name: "Progress",
