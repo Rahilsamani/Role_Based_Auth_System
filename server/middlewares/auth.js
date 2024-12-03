@@ -54,10 +54,7 @@ exports.isUser = async (req, res, next) => {
 //isModeratorOrAdmin
 exports.isModeratorOrAdmin = async (req, res, next) => {
   try {
-    if (
-      req.user.accountType !== "Moderator" ||
-      req.user.accountType !== "Admin"
-    ) {
+    if (req.user.accountType == "User") {
       return res.status(401).json({
         success: false,
         message: "This is a protected route for Moderator and Admin only",
@@ -75,7 +72,7 @@ exports.isModeratorOrAdmin = async (req, res, next) => {
 //isAdmin
 exports.isAdmin = async (req, res, next) => {
   try {
-    if (req.user.accountType !== "Admin") {
+    if (req.body.user.role !== "Admin") {
       return res.status(401).json({
         success: false,
         message: "This is a protected route for Admin only",

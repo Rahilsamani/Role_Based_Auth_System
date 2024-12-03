@@ -52,4 +52,51 @@ const getAllUsers = async (req, res) => {
   }
 };
 
-module.exports = { getUserDetails, getAllUsers };
+const banUser = async (req, res) => {
+  try {
+    const userId = req.params.userId;
+
+    await User.updateOne({ _id: userId }, { isBan: true });
+
+    return res.status(202).json({
+      success: true,
+      message: "User Banned Successfully",
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "Something went wrong while banning the users",
+      error: error.message,
+    });
+  }
+};
+
+const changeRole = async (req, res) => {
+  try {
+    const userId = req.params.userId;
+    const { role } = req.body;
+
+    if (!role) {
+      return res.status(400).json({
+        success: false,
+        message: "Role is required",
+      });
+    }
+
+    await User.updateOne({ _id: userId }, { role });
+
+    return res.status(202).json({
+      success: true,
+      message: "User role changed successfully",
+    });
+  } catch (error) {
+    console.error("Error in changeRole:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Something went wrong while changing role",
+      error: error.message,
+    });
+  }
+};
+
+module.exports = { getUserDetails, getAllUsers, banUser, changeRole };

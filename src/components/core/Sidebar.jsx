@@ -6,6 +6,7 @@ const Sidebar = () => {
   const sideLinks = [
     { icon: "VscGraphLine", name: "Track", link: "/dashboard/track" },
     { icon: "VscAccount", name: "Profile", link: "/dashboard/profile" },
+    { icon: "VscOrganization", name: "Users", link: "/dashboard/users" },
     {
       icon: "GiProgression",
       name: "Progress",

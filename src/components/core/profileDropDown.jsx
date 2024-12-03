@@ -3,6 +3,7 @@ import {
   AiOutlineCaretDown,
   AiOutlineHome,
   AiOutlineInfoCircle,
+  AiOutlineDashboard,
 } from "react-icons/ai";
 import { VscSignOut } from "react-icons/vsc";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,6 +12,7 @@ import useOnClickOutside from "../../hooks/useOnClickOutside";
 import { setToken, setUser } from "../../slices/authSlice";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import { IoIosContact } from "react-icons/io";
 
 export default function ProfileDropdown() {
   const { user } = useSelector((state) => state.auth);
@@ -61,6 +63,20 @@ export default function ProfileDropdown() {
             >
               <AiOutlineInfoCircle />
               <p>About</p>
+            </Link>
+            <Link
+              to="/dashboard/track"
+              className="flex items-center gap-x-2 px-2 py-1 hover:bg-slate-100"
+            >
+              <AiOutlineDashboard />
+              <p>Dashboard</p>
+            </Link>
+            <Link
+              to="/contact"
+              className="flex items-center gap-x-2 px-2 py-1 hover:bg-slate-100"
+            >
+              <IoIosContact />
+              <p>Contact</p>
             </Link>
           </div>
           <div
