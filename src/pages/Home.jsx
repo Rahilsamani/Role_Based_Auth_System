@@ -45,7 +45,7 @@ const Home = () => {
       <div className="flex justify-center items-center pt-24 pb-24">
         <div className="flex flex-col-reverse md:flex-row w-11/12 justify-between">
           <div className="w-full md:w-1/2 flex flex-col gap-2">
-            <h2 className="text-5xl font-semibold text-blue-300 text-shadow-custom mb-3">
+            <h2 className="text-5xl font-semibold text-blue text-shadow-custom mb-3">
               Redefining Cybersecurity with AI-Powered Solutions
             </h2>
             <p className="text-pure-greys-300 text-lg pr-16">
@@ -75,7 +75,7 @@ const Home = () => {
       {/*Section 2  */}
       <div className="flex justify-center items-center">
         <div className="flex flex-col justify-center items-center pt-10 pb-24 w-11/12">
-          <h2 className="text-5xl font-semibold text-blue-300 text-shadow-custom leading-[1.8]">
+          <h2 className="text-5xl font-semibold text-blue text-shadow-custom leading-[1.8]">
             OUR FEATURES
           </h2>
           <div className="flex flex-wrap justify-center items-center gap-10 mt-10">
