@@ -1,5 +1,22 @@
 # **VRV Security Backend Developer Intern Assignment: Role-Based Access Control (RBAC)**
 
+## Credentials
+
+### User
+
+- email: nuhulyxuq@mailinator.com
+- password: Pa$$w0rd!
+
+### Moderator
+
+- email: judefaqo@mailinator.com
+- password: Pa$$w0rd!
+
+### Admin
+
+- email: rahilahmed1720@gmail.com
+- password: 123456
+
 ### **Overview**
 
 This project implements a Role-Based Access Control (RBAC) system for a secure web application. Users are assigned roles such as **Admin**, **Moderator**, and **User**, and their access to resources and functionalities is controlled based on their roles. The goal of this project is to provide secure authentication, authorization, and role management for an application that ensures only authorized users can access specific resources.
