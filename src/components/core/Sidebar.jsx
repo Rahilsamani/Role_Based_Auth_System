@@ -1,21 +1,18 @@
 import { GiProgression } from "react-icons/gi";
 import * as Icons from "react-icons/vsc";
 import { NavLink, matchPath, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Sidebar = () => {
   const sideLinks = [
     { icon: "VscGraphLine", name: "Track", link: "/dashboard/track" },
     { icon: "VscAccount", name: "Profile", link: "/dashboard/profile" },
     { icon: "VscOrganization", name: "Users", link: "/dashboard/users" },
-    {
-      icon: "GiProgression",
-      name: "Progress",
-      link: "/dashboard/progress",
-    },
     { icon: "VscGraphScatter", name: "Payroll", link: "/dashboard/payroll" },
   ];
 
   const location = useLocation();
+  const { user } = useSelector((state) => state.auth);
 
   const matchRoute = (route) => {
     return matchPath({ path: route }, location.pathname);
@@ -25,9 +22,9 @@ const Sidebar = () => {
     <div className="md:flex hidden h-[calc(100vh-3.5rem)] min-w-[220px] flex-col border-r-[1px] border-grey bg-slate-800 py-10">
       <div className="flex flex-col gap-2">
         {sideLinks.map((link, index) => {
-          const Icon = link.icon.startsWith("Vsc")
-            ? Icons[link.icon]
-            : GiProgression;
+          if (link.name === "Users" && user?.role === "User") return null;
+          const Icon = Icons[link.icon];
+
           return (
             <NavLink
               to={link.link}

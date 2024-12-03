@@ -13,6 +13,7 @@ import PrivateRoute from "./components/core/PrivateRoute";
 import Contact from "./pages/Contact";
 import ProfilePage from "./components/core/ProfilePage";
 import Users from "./components/core/Users";
+import AdminRoute from "./components/core/AdminRoute";
 
 function App() {
   return (
@@ -48,7 +49,17 @@ function App() {
         >
           <Route path="dashboard/track" element={<Track />} />
           <Route path="dashboard/profile" element={<ProfilePage />} />
-          <Route path="dashboard/users" element={<Users />} />
+
+          <Route
+            element={
+              <AdminRoute allowedRoles={["Admin", "Moderator"]}>
+                <Users />
+              </AdminRoute>
+            }
+          >
+            <Route path="dashboard/users" element={<Users />} />
+          </Route>
+
           <Route path="dashboard/progress" element={<UnderDevelopment />} />
           <Route path="dashboard/payroll" element={<UnderDevelopment />} />
         </Route>

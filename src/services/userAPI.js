@@ -31,7 +31,6 @@ export const banUser = async (userId, token) => {
 
 export const changeUserRole = async (userId, newRole, token, user) => {
   try {
-    console.log("User 2 - ", user);
     await axios.post(
       `http://localhost:4000/api/v1/user/changeRole/${userId}`,
       { role: newRole, user },
