@@ -1,21 +1,4 @@
-# **VRV Security Backend Developer Intern Assignment: Role-Based Access Control (RBAC)**
-
-## Credentials
-
-### User
-
-- email: buny@mailinator.com
-- password: Pa$$w0rd!
-
-### Moderator
-
-- email: heze@mailinator.com
-- password: Pa$$w0rd!
-
-### Admin
-
-- email: rahilahmed1720@gmail.com
-- password: 123456
+# **Role-Based Access Control (RBAC)**
 
 ### **Overview**
 
